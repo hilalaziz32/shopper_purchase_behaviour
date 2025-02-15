@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 40%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            padding: 12px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter User Shopping Behavior</h2>
+        <form method="post">
+            <label>Administrative Pages Visited:</label>
+            <input type="text" name="Administrative" required>
+
+            <label>Informational Pages Visited:</label>
+            <input type="text" name="Informational" required>
+
+            <label>Product-Related Pages Visited:</label>
+            <input type="text" name="ProductRelated" required>
+
+            <label>Exit Rate:</label>
+            <input type="text" name="ExitRates" required>
+
+            <label>Page Value:</label>
+            <input type="text" name="PageValues" required>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if result %}
+        <div class="result">Prediction: {{ result }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
